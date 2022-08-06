@@ -1,6 +1,5 @@
 
 
-
 def name1():
     return input("Введите Имя: ")
 
@@ -15,3 +14,5 @@ def description1():
 
 def contact_search():
     return input ('Введите имя необходимого контакта: ')
+
+

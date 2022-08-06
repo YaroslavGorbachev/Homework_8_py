@@ -1,14 +1,18 @@
+from lib2to3.pytree import convert
 import view
 import data
 import write_down
 import removal 
 import out_data 
 import out_search 
+import convert
+import csv
+from os import path
 
 
 def book():
         while True:
-            print('Список команд: \n 1 - добавить контакт \n 2 - удалить контакт \n 3 - посмотреть список контактов \n 4 - найти номер по имени \n 5 - завершить работу \n')
+            print('Список команд: \n 1 - добавить контакт \n 2 - удалить контакт \n 3 - посмотреть список контактов \n 4 - найти номер по имени \n 5 - завершить работу \n ')
             command = int(input('Введите номер команды: '))
             if command == 1:
                 a = view.name1()
@@ -18,6 +22,7 @@ def book():
                 data.id(a,b,c,d)
                 book_new = data.get_id()
                 write_down.save_phone_number(book_new)
+                convert.converti()
                 print('Контакт Сохранен \n')
             elif command == 2:
                 x = view.contact_search()
@@ -26,12 +31,19 @@ def book():
             elif command == 3:
                 print('Телефонная книга: \n')
                 out_data.look_phone_book()
+            
             elif command == 4:
                 x = view.contact_search()
                 print('Данные по запросу: \n')
                 out_search.search_view_number(x)
+            
             elif command == 5:
                 print('работа завершена')
                 break
             else:
                 print('ошибка')
+
+
+
+
+

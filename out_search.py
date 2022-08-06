@@ -1,13 +1,11 @@
-
-
-
 from encodings import utf_8
 
 
 def search_view_number(contact):
-    f = open(r'telephon_book.txt','r')
+    f = open(r'telephon_book.txt','r',encodings=utf_8,)
     line_new = f.readlines()
     f.close()
     for line in line_new: 
         if line.find(contact) == 0:
             print(line)
+
